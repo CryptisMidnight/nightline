@@ -1,0 +1,140 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "foreground": "#3A86FF",
+          "properties": {
+            "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}} "
+          },
+          "style": "plain",
+          "type": "os"
+        },
+        {
+          "background": "#242424",
+          "foreground": "#f1184c",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "display_host": true,
+            "template": " {{ if .SSHSession }}\uf817 {{ end }}{{ .UserName }} \ue0b1 {{ .HostName }} "
+          },
+          "style": "powerline",
+          "type": "session"
+        },
+        {
+          "background": "#f1184c",
+          "foreground": "#242424",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "template": " \uf0e7 "
+          },
+          "style": "powerline",
+          "type": "root"
+        },
+        {
+          "background": "#242424",
+          "foreground": "#FFBB00",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "template": " {{ .CurrentDate | date .Format }} ",
+            "time_format": "2/Jan/06 3:04pm"
+          },
+          "style": "powerline",
+          "type": "time"
+        },
+        {
+          "background": "#33DD2D",
+          "foreground": "#242424",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "template": ""
+          },
+          "style": "powerline",
+          "type": "text"
+        },
+        {
+          "background": "#242424",
+          "foreground": "#33DD2D",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "folder_icon": "\ue5fe ",
+            "folder_separator_icon": "\ue0b1 ",
+            "home_icon": "\uf7db ",
+            "style": "agnoster_short",
+            "template": " {{ .Path }} "
+          },
+          "style": "powerline",
+          "type": "path"
+        },
+        {
+          "background": "#242424",
+          "foreground": "#3A86FF",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "fetch_stash_count": true,
+            "fetch_upstream_icon": true,
+            "template": "\u279c {{ .HEAD }} {{ .BranchStatus }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0}} \uf692 {{ .StashCount }}{{ end }}{{ if gt .WorktreeCount 0}} \uf1bb {{ .WorktreeCount }}{{ end }} "
+          },
+          "style": "powerline",
+          "type": "git"
+        },
+        {
+          "background": "#242424",
+          "foreground": "#7FD5EA",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "template": "\ufcd1 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+          },
+          "style": "powerline",
+          "type": "go"
+        },
+        {
+          "background": "#242424",
+          "foreground": "#9e7eff",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "template": "\ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} "
+          },
+          "style": "powerline",
+          "type": "python"
+        },
+        {
+          "background": "#33DD2D",
+          "background_templates": [
+            "{{ if gt .Code 0 }}#f1184c{{ end }}"
+          ],
+          "foreground": "#242424",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "always_enabled": true,
+            "template": " \uf0eb "
+          },
+          "style": "powerline",
+          "type": "exit"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#f1184c",
+          "properties": {
+            "style": "austin",
+            "template": "\uf061",
+            "threshold": 150
+          },
+          "style": "plain",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 1
+}
